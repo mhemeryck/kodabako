@@ -1,3 +1,3 @@
-kodahako - コダ箱
+kodabako - コダ箱
 -----------------
 A codabox client
