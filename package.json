@@ -1,0 +1,9 @@
+{
+  "name": "kodabako",
+  "version": "0.0.1",
+  "description": "codabox desktop client",
+  "main": "index.js",
+  "repository": "https://github.com/codabox/kodabako",
+  "author": "Martijn Hemeryck <martijn.hemeryck@gmail.com>",
+  "license": "MIT"
+}
