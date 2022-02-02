@@ -1,0 +1,7 @@
+sftp:
+  image: atmoz/sftp:alpine
+  volumes:
+    - ./:/home/foo/upload
+  ports:
+    - "2222:22"
+  command: foo:pass:1000
