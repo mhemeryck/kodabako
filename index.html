@@ -2,42 +2,22 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
-    />
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self'"
+      content="script-src 'self' 'unsafe-inline';"
     />
-    <meta
-      http-equiv="X-Content-Security-Policy"
-      content="default-src 'self'; script-src 'self'"
-    />
-    <title>kodabako - コダ箱</title>
+    <title>kodabako</title>
+    <script src="./renderer.js"></script>
   </head>
   <body>
-    <h1 class="title">kodabako - コダ箱</h1>
+    <h2>connection details</h2>
     <form id="connection-details">
-      <div class="field">
-        <label class="label">Username</label>
-        <div class="control">
-          <input class="input" type="text" placeholder="Text input" />
-          <span class="icon is-small is-left">
-            <i class="fas fa-user"></i>
-          </span>
-        </div>
-      </div>
-      <div class="field">
-        <label class="label">Password</label>
-        <div class="control"><input class="input" /><input</div>
-      </div>
-      <div class="field">
-        <label class="label">Port</label>
-        <div class="control"><input class="input" /><input</div>
-      </div>
+      Username: <input type="text" name="username" /><br />
+      Password: <input type="text" name="password" /><br />
+      Port: <input type="number" name="port" /><br /><br />
+      <input id="submit-details" type="button" value="Submit" />
     </form>
+    <h2>Dry run output</h2>
   </body>
 </html>
