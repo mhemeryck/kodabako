@@ -3,6 +3,7 @@ const path = require("path");
 const Client = require("ssh2-sftp-client");
 
 let sftp = new Client();
+let win = null;
 
 const createWindow = () => {
   const win = new BrowserWindow({
@@ -19,7 +20,7 @@ const createWindow = () => {
 };
 
 app.whenReady().then(() => {
-  app.win = createWindow();
+  win = createWindow();
 
   app.on("activate", () => {
     if (BrowserWindow.getAllWindows().length === 0) {
@@ -44,5 +45,5 @@ ipcMain.handle("credentials", async (event, credentials) => {
   console.log(listing);
 
   // Send sftp listing to main app window
-  app.win.webContents.send('sftp-listing', listing);
+  win.webContents.send('sftp-listing', listing);
 });

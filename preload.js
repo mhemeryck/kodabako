@@ -5,6 +5,7 @@ contextBridge.exposeInMainWorld("api", {
   // Send data from window to main
   send: (channel, data) => ipcRenderer.invoke(channel, data),
   // Send data from main to window
-  handle: (channel, callable, event, data) =>
-    ipcRenderer.on(channel, callable(event, data))
+  receive: (channel, func) => {
+    ipcRenderer.on(channel, (_, ...args) => func(...args));
+  }
 });

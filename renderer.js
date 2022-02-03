@@ -12,12 +12,7 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   // Incoming event from main process
-  api.handle(
-    "sftp-listing",
-    (event, listing) =>
-      function(event, listing) {
-        document.getElementById("dry-run").innerHTML = listing[0].name;
-      },
-    event
-  );
+  api.receive("sftp-listing", listing => {
+    document.getElementById("dry-run").innerHTML = listing[0].name;
+  });
 });
