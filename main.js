@@ -2,7 +2,6 @@ const { app, ipcMain, BrowserWindow } = require("electron");
 const path = require("path");
 const Client = require("ssh2-sftp-client");
 
-let sftp = new Client();
 let win = null;
 
 const createWindow = () => {
@@ -37,13 +36,16 @@ app.on("window-all-closed", () => {
 
 // Handle incoming data from credentials sent by renderer
 ipcMain.handle("credentials", async (event, credentials) => {
-  console.log(`${event}: ${credentials}`);
+  console.log(`Incoming event ${event}`);
 
   // connect to remote SFTP
+  let sftp = new Client();
   await sftp.connect(credentials);
-  listing = await sftp.list("/");
-  console.log(listing);
+  listing = await sftp.list("/upload");
+
+  entries = listing.map(el => el["name"]);
+  console.log(entries);
 
   // Send sftp listing to main app window
-  win.webContents.send('sftp-listing', listing);
+  win.webContents.send("sftp-listing", entries);
 });
