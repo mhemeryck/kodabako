@@ -38,12 +38,6 @@
           "config": {}
         }
       ],
-      "plugins": [
-        "@electron-forge/plugin-electronegativity",
-        {
-          "isSarif": true
-        }
-      ],
       "publishers": [
         {
           "name": "@electron-forge/publisher-github",
