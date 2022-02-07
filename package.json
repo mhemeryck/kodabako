@@ -9,7 +9,7 @@
     "package": "electron-forge package",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
-    "lint": "echo \"No linting configured\""
+    "lint": "eslint"
   },
   "repository": "https://github.com/codabox/kodabako",
   "author": {
@@ -36,10 +36,24 @@
         {
           "name": "@electron-forge/maker-deb",
           "config": {}
-        },
+        }
+      ],
+      "plugins": [
+        "@electron-forge/plugin-electronegativity",
         {
-          "name": "@electron-forge/maker-rpm",
-          "config": {}
+          "isSarif": true
+        }
+      ],
+      "publishers": [
+        {
+          "name": "@electron-forge/publisher-github",
+          "config": {
+            "repository": {
+              "owner": "mhemeryck",
+              "name": "kodabako"
+            },
+            "prerelease": true
+          }
         }
       ]
     }
