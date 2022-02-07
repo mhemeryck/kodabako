@@ -20,7 +20,7 @@ jobs:
           node-version: 17.3.0
       - name: install dependencies
         run: yarn install
-      - name: publish
+      - name: release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: yarn publish
+        run: yarn release
