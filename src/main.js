@@ -1,6 +1,7 @@
 const { app, ipcMain, BrowserWindow } = require("electron");
 const path = require("path");
 const Client = require("ssh2-sftp-client");
+require("update-electron-app")();
 
 let win = null;
 
