@@ -1,7 +1,7 @@
 {
   "name": "kodabako",
   "productName": "kodabako",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "codabox desktop client",
   "main": "src/main.js",
   "scripts": {
