@@ -11,7 +11,7 @@
     "release": "electron-forge publish",
     "lint": "eslint"
   },
-  "repository": "https://github.com/codabox/kodabako",
+  "repository": "https://github.com/mhemeryck/kodabako",
   "author": {
     "name": "Martijn Hemeryck",
     "email": "martijn.hemeryck@gmail.com"
