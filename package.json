@@ -24,7 +24,8 @@
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
-            "name": "kodabako"
+            "name": "kodabako",
+            "certificateFile": "cert/codabox.xyz.pem"
           }
         },
         {
