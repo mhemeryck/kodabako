@@ -3,6 +3,11 @@ const path = require("path");
 const Client = require("ssh2-sftp-client");
 require("update-electron-app")();
 
+// Only launch once under windows
+if (require("electron-squirrel-startup")) {
+  return app.quit();
+}
+
 let win = null;
 
 const createWindow = () => {
