@@ -17,6 +17,14 @@ window.addEventListener("DOMContentLoaded", () => {
     for (const entry of entries) {
       lines += `<li>${entry}</li>\n`;
     }
-    document.getElementById("dry-run").innerHTML = lines;
+    document.getElementById("dry-run").innerHTML = `<ul>${lines}</ul>`;
+  });
+
+  // get app version
+  api.send("get-app-version", {});
+
+  // set app-version
+  api.receive("app-version", version => {
+    document.getElementById("version").innerHTML = `<p>version ${version}</p>`;
   });
 });
