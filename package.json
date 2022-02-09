@@ -42,12 +42,6 @@
         {
           "name": "@electron-forge/maker-rpm",
           "config": {}
-        },
-        {
-          "name": "@electron-forge/maker-wix",
-          "config": {
-            "manufacturer": "codabox"
-          }
         }
       ],
       "publishers": [
