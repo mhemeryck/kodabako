@@ -55,3 +55,8 @@ ipcMain.handle("credentials", async (event, credentials) => {
   // Send sftp listing to main app window
   win.webContents.send("sftp-listing", entries);
 });
+
+// Send app version when requested
+ipcMain.handle("get-app-version", async () => {
+  win.webContents.send("app-version", app.getVersion());
+});
