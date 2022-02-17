@@ -1,7 +1,16 @@
-const { app, ipcMain, BrowserWindow } = require("electron");
+const { app, ipcMain, BrowserWindow, autoUpdater } = require("electron");
 const path = require("path");
 const Client = require("ssh2-sftp-client");
-require("update-electron-app")();
+const { setInterval } = require("timers");
+
+// Auto update
+const server = "http://10.0.2.2:5000";
+const url = `${server}/update/${process.platform}/${app.getVersion()}`;
+autoUpdater.setFeedURL({ url });
+
+setInterval(() => {
+  autoUpdater.checkForUpdates();
+}, 60000);
 
 // Only launch once under windows
 if (require("electron-squirrel-startup")) {
